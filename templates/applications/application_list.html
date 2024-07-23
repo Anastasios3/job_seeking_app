@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block title %}My Applications{% endblock %} {%
+block content %}
+<h2>My Applications</h2>
+{% if applications %}
+<ul>
+  {% for application in applications %}
+  <li>
+    {{ application.position }} at {{ application.company }} (Status: {{
+    application.get_status_display }})
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>You haven't added any applications yet.</p>
+{% endif %} {% endblock %}
